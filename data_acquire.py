@@ -1,5 +1,5 @@
 import openmeteo_requests
-
+import datetime
 import pandas as pd
 import requests_cache
 from retry_requests import retry
@@ -18,7 +18,7 @@ params = {
 	"latitude": [45.2, 45.1, 44.8, 45.1, 45.5, 45.4],
 	"longitude": [10.4, 10.8, 10.3, 10, 10.2, 10.9],
 	"start_date": "2020-01-02",
-	"end_date": "2026-11-18",
+	"end_date": datetime.datetime.today().strftime('%Y-%m-%d'),
 	"hourly": ["temperature_2m", "surface_pressure", "wind_speed_100m", "wind_speed_10m", "wind_direction_10m", "wind_direction_100m", "wind_gusts_10m", "cloud_cover", "relative_humidity_2m", "rain"],
 	"models": ["ecmwf_ifs"],
 	"timezone": "UTC",
